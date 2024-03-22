@@ -3,10 +3,11 @@ import { useAuth } from "./auth"
 
 function ProfilePage() {
     const auth = useAuth()
+
     return (
         <>
             <h1>Profile Page</h1>
-            <p>Hola {auth.user.username}</p>
+            <p>Welcome, {auth.user?.username}</p>
         </>
     )
 }
