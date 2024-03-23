@@ -7,6 +7,8 @@ import { ProfilePage } from "./ProfilePage"
 import { BlogPost } from "./BlogPost"
 import { LoginPage } from "./LoginPage"
 import { LogoutPage } from "./LogoutPage"
+import { BlogCreate } from "./BlogCreate"
+import { BlogEdit } from "./BlogEdit"
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route path="/" element={<HomePage/>} />
             <Route path="/blog" element={<BlogPage/>}>
               <Route path=":slug" element={<BlogPost/>} />
+              <Route path="new" element={<BlogCreate />} />
+              <Route path=":slug/edit" element={<BlogEdit />} />
             </Route>
             <Route path="/login" element={<LoginPage/>} />
             <Route 

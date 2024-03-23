@@ -9,13 +9,13 @@ blogdata.push({
     title: "Que es Vue?",
     slug: "que-es-vue",
     content: "Vue es una libreria de JavaScript para construir interfaces de usuario",
-    author: "Manuel Menchu"
+    author: "Juan"
 })
 blogdata.push({
     title: "Que es Angular?",
     slug: "que-es-angular",
     content: "Angular es una libreria de JavaScript para construir interfaces de usuario",
-    author: "Quien? Menchu"
+    author: "Freddy"
 })
 
 export { blogdata }

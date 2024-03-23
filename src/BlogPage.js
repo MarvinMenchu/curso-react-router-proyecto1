@@ -1,17 +1,32 @@
 import React from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import { blogdata } from "./blogdata"
+import { useAuth } from "./auth"
 
 function BlogPage() {
+
+    const auth = useAuth()
+
+    const navigate = useNavigate()
+
+    const createPost = () => {
+        if (auth.user) {
+            navigate("/blog/new")
+        }
+    }
+
     return (
         <>
             <h1>Blog</h1>
-            <Outlet />
+            {auth.user && (
+                <button onClick={createPost}>Add post</button>
+            )}
             <ul>
             {blogdata.map(post => (
                 <BlogLink key={post.slug} post={post} />
             ))}
             </ul>
+            <Outlet />
         </>
     )
 }
