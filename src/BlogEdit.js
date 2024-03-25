@@ -36,7 +36,7 @@ function BlogEdit() {
                     <input 
                         type="text" 
                         value={data.title}
-                        onChange={(e) => setData({ ...data, title: e.target.value})} />
+                        onChange={(e) => setData({ ...data, title: e.target.value})}   />
                     <br/>
                     <label>Slug: </label>
                     <input 
