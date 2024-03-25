@@ -1,26 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useAuth } from "./auth"
-import { Navigate, useParams } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { blogdata } from "./blogdata"
 function BlogEdit() {
-
+    const navigate = useNavigate()
     const { slug } = useParams()
     const auth = useAuth()
 
-    const [data, setData] = React.useState({
+    const blog = {
         title: "",
         slug: "",
         content: ""
-    })
+    }
 
-    const bd = blogdata.find(post => post.slug === slug)
-    console.log(bd)
-    setData(bd)
+    const [data, setData] = React.useState(blog)
+
+    useEffect(() => {
+        const bd = blogdata.find(post => post.slug === slug)
+        setData(bd)
+    }, [])
 
     const updatePost = (e) => {
         e.preventDefault()
         const index = blogdata.findIndex(post => post.slug === slug)
         blogdata[index] = data
+        navigate("/blog")
     }
 
     if (auth.user){

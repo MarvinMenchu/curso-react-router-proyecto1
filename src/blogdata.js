@@ -3,7 +3,7 @@ blogdata.push({
     title: "Que es React?",
     slug: "que-es-react",
     content: "React es una libreria de JavaScript para construir interfaces de usuario",
-    author: "Marvin Menchu"
+    author: "Marvin"
 })
 blogdata.push({
     title: "Que es Vue?",
